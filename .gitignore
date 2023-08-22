@@ -1,0 +1,9 @@
+# Ignored files and directories
+node_modules/
+.yarn/
+.npm/
+.yarn.lock
+package-lock.json
+.env
+logs/
+.vercel
