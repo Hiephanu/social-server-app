@@ -4,6 +4,7 @@ const homeController =require('../controllers/homeController.js')
 const authController =require('../controllers/authController/authController.js')
 const postController =require('../controllers/postController/postController.js')
 const friendController = require('../controllers/friendController/friendController.js')
+const homePageController = require('../controllers/homeController/homeController.js')
 const verifyToken = require('../middlewares/verifyToken.js')
 const uploadedFile =require('../middlewares/uploadFile.js')
 function initWebRoute(app) {
@@ -18,6 +19,7 @@ function initWebRoute(app) {
   app.post('/accept-friend',friendController.acceptFriend)
   app.post('/block-friend',friendController.blockFriend)
   app.get('/get-post-user',postController.getPostUser)
+  app.get('/get-post-home',homePageController.getPostHome)
 }
 
 module.exports = initWebRoute;
