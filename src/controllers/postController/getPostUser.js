@@ -1,16 +1,13 @@
 const db = require('../../models/index')
 
 const getPostUser =async (req,res) => {
-    const offset = parseInt(req.query.offset) || 0
-    const limit = 5
+    const limit = 2
     const id = req.query.id
-    console.log(id,offset);
     try {
-        const posts = db.post.findAll({
+        const posts =await db.post.findAll({
             where : {
                 userId:id
             },
-            offset,
             limit
         },
       )
