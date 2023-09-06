@@ -14,10 +14,13 @@ function initWebRoute(app) {
   app.post('/login',authController.signin);
   app.post('/create-post',verifyToken,uploadedFile,postController.createdPost)
   app.post('/delete-post',verifyToken,postController.deletePost)
-  app.post('/search-friend',friendController.searchFriend)
+  app.get('/search-friend',friendController.searchFriend)
   app.post('/send-add-friend',friendController.sendAddFriend)
   app.post('/accept-friend',friendController.acceptFriend)
   app.post('/block-friend',friendController.blockFriend)
+  app.get('/get-all-friend',friendController.getAllFriend)
+  app.get('/get-block-friend',friendController.getBlockFriend)
+  app.get('/get-wait-friend',friendController.getWaitFriend)
   app.get('/get-post-user',postController.getPostUser)
   app.get('/get-post-home',homePageController.getPostHome)
 }
