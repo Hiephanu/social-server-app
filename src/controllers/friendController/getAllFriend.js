@@ -1,7 +1,7 @@
 const db = require("../../models/index");
 const { Op } = require("sequelize");
 const getAllFriend = async (req,res) => {
-  const id = req.query.id;
+  const id = req.query.id
   try {
     const friends = await db.friendship.findAll({
       where: {
