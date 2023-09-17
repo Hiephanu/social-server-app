@@ -7,6 +7,7 @@ const postController =require('../controllers/postController/postController.js')
 const friendController = require('../controllers/friendController/friendController.js')
 const homePageController = require('../controllers/homeController/homeController.js')
 const getImageController = require('../controllers/getImageController/getImageController.js')
+const getPostImage = require('../controllers/getImageController/getPostImage.js')
 const verifyToken = require('../middlewares/verifyToken.js')
 const uploadedFile =require('../middlewares/uploadFile.js')
 function initWebRoute(app) {
@@ -15,7 +16,8 @@ function initWebRoute(app) {
   app.post('/register',authController.signup_post)
   app.post('/login',authController.signin)
   app.get('/get-user-by-id',userController.getUserById)
-  app.post('/create-post',verifyToken,uploadedFile,postController.createdPost)
+  app.post('/create-post',uploadedFile,postController.createdPost)
+  app.delete('/delete-friend/:id',friendController.deleteFriend)
   app.post('/delete-post',verifyToken,postController.deletePost)
   app.get('/search-friend',friendController.searchFriend)
   app.post('/send-add-friend',friendController.sendAddFriend)
@@ -25,8 +27,9 @@ function initWebRoute(app) {
   app.get('/get-block-friend',friendController.getBlockFriend)
   app.get('/get-wait-friend',friendController.getWaitFriend)
   app.get('/get-post-user',postController.getPostUser)
-  app.get('/get-post-home',homePageController.getPostHome)
+  app.post('/get-post-home/:id',homePageController.getPostHome)
   app.get('/avata/:id',getImageController)
+  app.get('/postImage/:name',getPostImage)
 }
 
 module.exports = initWebRoute;

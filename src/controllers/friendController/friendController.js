@@ -5,6 +5,7 @@ const blockFriend = require('./blockFriend')
 const getAllFriend = require('./getAllFriend')
 const getBlockFriend = require('./getBlockFriend')
 const getWaitFriend = require('./getWaitFriend')
+const deleteFriend = require('./deleteFriend')
 
 module.exports = {
     searchFriend,
@@ -13,5 +14,6 @@ module.exports = {
     blockFriend,
     getAllFriend,
     getBlockFriend,
-    getWaitFriend
+    getWaitFriend,
+    deleteFriend
 }

@@ -1,7 +1,7 @@
 const db = require('../../models/index')
 
 const getPostUser =async (req,res) => {
-    const limit = 2
+    const limit = 5
     const id = req.query.id
     try {
         const posts =await db.post.findAll({

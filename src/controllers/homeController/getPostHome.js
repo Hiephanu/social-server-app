@@ -5,8 +5,10 @@ const getPostHome = async (req, res) => {
   //   const offset = parseInt(req.query.offset) || 0;
   const limit = 5;
   //   const id = req.query.id;
-  const { offset, id } = req.body;
+  const id = req.params.id;
+  const {offset} = req.body
   const offsetInt= parseInt(offset)
+  console.log(id,offset);
   try {
     let friendId = [];
     let friend = await db.friendship.findAll({
@@ -24,6 +26,7 @@ const getPostHome = async (req, res) => {
         friendId.push(friend[i].idUserSend);
       }
     }
+    console.log(friendId);
     const posts = await db.post.findAll({
       where: {
         userId: friendId,
