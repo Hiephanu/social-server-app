@@ -3,7 +3,7 @@ const { Op } = require("sequelize");
 
 const getPostHome = async (req, res) => {
   //   const offset = parseInt(req.query.offset) || 0;
-  const limit = 5;
+  const limit = 10;
   //   const id = req.query.id;
   const id = req.params.id;
   const {offset} = req.body

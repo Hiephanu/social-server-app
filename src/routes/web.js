@@ -6,6 +6,7 @@ const userController = require('../controllers/userController/userController.js'
 const postController =require('../controllers/postController/postController.js')
 const friendController = require('../controllers/friendController/friendController.js')
 const homePageController = require('../controllers/homeController/homeController.js')
+const likeController = require('../controllers/likeController/likeController.js')
 const getImageController = require('../controllers/getImageController/getImageController.js')
 const getPostImage = require('../controllers/getImageController/getPostImage.js')
 const verifyToken = require('../middlewares/verifyToken.js')
@@ -30,6 +31,9 @@ function initWebRoute(app) {
   app.post('/get-post-home/:id',homePageController.getPostHome)
   app.get('/avata/:id',getImageController)
   app.get('/postImage/:name',getPostImage)
+  app.post('/create-like',likeController.createLike)
+  app.get('/get-like-post/:id',likeController.getLikePost)
+  app.delete('/delete-like',likeController.unLike)
 }
 
 module.exports = initWebRoute;

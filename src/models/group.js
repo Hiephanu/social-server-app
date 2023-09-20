@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  Group.init({
+  group.init({
     name: DataTypes.STRING,
     userIds: DataTypes.JSON
   }, {

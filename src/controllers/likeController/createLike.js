@@ -1,13 +1,15 @@
 const db = require("../../models/index")
 const createLike =async (req,res) =>{
-    const {idUser,isPost} = req.body
+    const {idUser,idPost} = req.body
+
     try {
-        const createLike = await db.like.create({
+        await db.like.create({
             idUser:idUser,
-            isPost:isPost
+            idPost:idPost
         })
         return res.status(200).json({message: 'Success'})
     } catch (error) {
+        console.log(error);
         return res.status(500).json({message: 'Internal error'})
     }
 }
