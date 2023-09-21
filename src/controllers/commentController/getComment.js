@@ -1,7 +1,7 @@
 const db = require('../../models/index')
 
 const getComment =async (req,res)=>{
-    const {postId} = req.query.postId
+    const postId = req.params.postId
     try {
         const comments  = await db.comment.findAll({
             where:{
