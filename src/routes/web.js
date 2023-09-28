@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const homeController =require('../controllers/homeController.js')
+const searchController = require('../controllers/searchController/searchController.js')
 const authController =require('../controllers/authController/authController.js')
 const userController = require('../controllers/userController/userController.js')
 const postController =require('../controllers/postController/postController.js')
@@ -31,6 +32,7 @@ function initWebRoute(app) {
   app.get('/get-wait-friend',friendController.getWaitFriend)
   app.get('/get-post-user',postController.getPostUser)
   app.post('/get-post-home/:id',homePageController.getPostHome)
+  app.post('/search',searchController.homeSearch)
   app.get('/avata/:id',getImageController)
   app.get('/postImage/:name',getPostImage)
   app.post('/create-like',likeController.createLike)
