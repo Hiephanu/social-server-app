@@ -9,7 +9,8 @@
     "jsonwebtoken": "^9.0.1",
     "mysql": "^2.18.1",
     "mysql2": "^3.5.0",
-    "sequelize": "^6.32.1"
+    "sequelize": "^6.32.1",
+    "socket.io": "^4.7.2"
   },
   "scripts": {
     "start": "nodemon src/server.js"

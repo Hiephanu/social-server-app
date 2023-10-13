@@ -16,11 +16,11 @@ const signin =async (req, res) => {
         res.json({message:'Login success',token:token,role:user.role,id:user.id})
       }
       else {
-        return res.json({message:'Wrong password'})
+        return res.status(401).json({message:'Wrong password'})
       }
     }
     else {
-      res.json('Can not find email')
+      res.status(401).json('Can not find email')
     }
   } catch (error) {
     
