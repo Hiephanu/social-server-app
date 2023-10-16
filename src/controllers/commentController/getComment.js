@@ -8,6 +8,7 @@ const getComment =async (req,res)=>{
                 postId:postId
             }
         })
+        console.log(comments);
         return res.status(200).json({comments: comments,message:'Success'})
     } catch (error) {
         return res.status(400).json({message:'Fail'})
