@@ -13,7 +13,7 @@ const signin =async (req, res) => {
       if(checkPassword.length==1){
         const token = jwt.sign({name:user.name,email:user.email},secretKey,{ expiresIn: '1h' })
         console.log(new Date());
-        res.json({message:'Login success',token:token,role:user.role,id:user.id})
+        res.json({message:'Login success',token:token,role:user.role,id:user.id,avata:user.avata,name:user.name})
       }
       else {
         return res.status(401).json({message:'Wrong password'})
