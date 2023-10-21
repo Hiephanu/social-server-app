@@ -9,7 +9,6 @@ const createdComment =async (req,res) =>{
             content:content,
             userName:userName
         })
-        console.log(userName);
         return res.status(200).json({message: 'Success'})
     } catch (error) {
         return res.status(400).json({message: 'Fail'})

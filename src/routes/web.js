@@ -13,7 +13,8 @@ const saveController = require('../controllers/saveController/saveController.js'
 const getImageController = require('../controllers/getImageController/getImageController.js')
 const getPostImage = require('../controllers/getImageController/getPostImage.js')
 const verifyToken = require('../middlewares/verifyToken.js')
-const uploadedFile =require('../middlewares/uploadFile.js')
+const uploadedFile =require('../middlewares/uploadFile.js');
+const uploadFileAvata = require('../middlewares/uploadFileAvata.js');
 function initWebRoute(app) {
   app.get('/', homeController.getHomePage);
   app.get('/about', homeController.aboutPage);
@@ -42,6 +43,7 @@ function initWebRoute(app) {
   app.post('/create-comment',commentController.createdComment)
   app.post('/create-save',saveController.createSave)
   app.get('/get-save-post/:id',saveController.getSavePost)
+  app.put('/user/update-avata',uploadFileAvata,userController.updateAvata)
 }
 
 module.exports = initWebRoute;
