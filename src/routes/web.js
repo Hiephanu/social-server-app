@@ -20,7 +20,7 @@ function initWebRoute(app) {
   app.get('/about', homeController.aboutPage);
   app.post('/register',authController.signup_post)
   app.post('/login',authController.signin)
-  app.get('/get-user-by-id',userController.getUserById)
+  app.get('/get-user-by-id/:id',userController.getUserById)
   app.post('/create-post',uploadedFile,postController.createdPost)
   app.delete('/delete-friend/:id',friendController.deleteFriend)
   app.post('/delete-post',verifyToken,postController.deletePost)

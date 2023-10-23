@@ -1,7 +1,7 @@
 const db= require("../../models/index")
 
 const getUserById = async (req,res) =>{
-    const id = req.query.id
+    const id = req.params.id
     try {
         const users = await db.user.findAll({
             where: {
