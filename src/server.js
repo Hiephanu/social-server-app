@@ -6,7 +6,7 @@ const initWebRoute = require('./routes/web')
 const cors= require('cors')
 const fileupload =require('express-fileupload')
 const config =require('./config/config') 
-
+const router = express.Router()
 //socket.io
 const {Server} = require('socket.io')
 const { createServer } = require('http')
@@ -18,12 +18,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors())
 app.use(fileupload())
 app.use(express.static(path.join(__dirname, 'public')))
+app.use("/api/v1",router)
 
 const port = process.env.PORT || 3001
 
   
 //setup route
-initWebRoute(app)
+initWebRoute(router)
 
 //create connection
 

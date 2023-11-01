@@ -1,7 +1,7 @@
 const db = require('../../models/index')
 
 const updateAvata =async (req,res)=>{
-    const filePath =  req.filePat
+    const filePath =  req.filePath
     try {
         await db.user.update({
             avata:filePath
