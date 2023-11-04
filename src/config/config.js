@@ -16,10 +16,10 @@ module.exports = {
     dialect: "mysql",
   },
   production: {
-    username:if0_34935562,
-    password:onc9HoK7YW,
-    database:if0_34935562_socialApp,
-    host: sql109.infinityfree.com,
+    username:'if0_34935562',
+    password:'onc9HoK7YW',
+    database:'if0_34935562_socialApp',
+    host: 'sql109.infinityfree.com',
     dialect: "mysql",
   },
 };
