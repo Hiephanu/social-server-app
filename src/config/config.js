@@ -19,7 +19,7 @@ module.exports = {
     username:'if0_34935562',
     password:'onc9HoK7YW',
     database:'if0_34935562_socialApp',
-    host: 'sql109.infinityfree.com',
+    host: 'https://php-myadmin.net/',
     dialect: "mysql",
   },
 };
